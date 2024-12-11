@@ -1,0 +1,10 @@
+<div class="itemDisplay">
+    <h4>{{ item['description'] }}</h4>
+    <p>{{ item['lost_found'] }} on {{ item['date_logged'] }} by {{ item['username'] }}</p>
+
+    <form method="POST" action="claim">
+        <input type="text" name="item-id-placeholder" value="{{ item['item_id'] }}" style="display:none"> <!-- this input is here only to send the id of the item selected through the URL upon form submission -->
+        
+        <button class="smallButton" type="submit">Claim</button>
+    </form>
+</div>

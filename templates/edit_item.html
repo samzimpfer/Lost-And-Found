@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Profile</h2>
+
+<form id="form" method="POST" action="update_item">
+    <input type="text" name="item-id-placeholder" value="{{ item['item_id'] }}" style="display:none"> <!-- this input is here only to send the id of the item selected through the URL upon form submission -->
+     
+    <p>
+        <label for="description">Description: </label>
+        <input type="text" name="description" value="{{ item['description'] }}" onclick="this.select()" required>
+    </p>
+    <p>
+        <label for="category">Category: </label>
+        <select name="category" id="category-select" onchange="updateCategories()" required>
+            <option value="">--Select a category--</option>
+            {% for category in categories %}
+            <option value="{{ category }}" {% if category == item['category'] %}selected{% endif %}>{{ category }}</option>
+            {% endfor %}
+            <option value="other">Other</option>
+        </select>
+    </p>
+    <p id="other-category-p" style="display:none">
+        <label for="other-category">Enter category:</label>
+        <input type="text" name="other-category" onclick="this.select()">
+    </p>
+    <p>
+        <label for="date">Date found: </label>
+        <input type="date" name="date" value="{{ item['date_logged'] }}" onclick="this.select()" required>
+    </p>
+    <p>
+        <button class="smallButton floatLeft" type="button" onclick="window.location.href='profile'">Cancel</button>
+        <button class="smallButton floatRight" type="submit">Save changes</button>
+    </p>
+</form>
+
+<script>
+    function updateCategories() {
+        category_value = document.forms["form"]["category-select"].value;
+        other_category_p = document.getElementById("other-category-p");
+        other_category_input = document.forms["form"]["other-category"];
+        if (category_value == "other") {
+            other_category_p.style.display = "";
+            other_category_input.required = true;
+        } else {
+            other_category_p.style.display = "none";
+            other_category_input.required = false;
+        }
+    }
+</script>
+
+{% endblock %}

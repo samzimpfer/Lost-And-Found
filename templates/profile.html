@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Profile</h2>
+
+<div class="container">
+    <p>Username: {{ info['username'] }}</p>
+    <p>Phone: {{ info['phone'] }}</p>
+    <p>Address: {{ info['address'] }}</p>
+    <button class="smallButton floatLeft" type="button" onclick="window.location.href='edit_user'">Edit info</button>
+    <button class="smallButton floatRight" type="button" onclick="window.location.href='logout'">Logout</button>
+</div>
+
+{% if claimed_items|length > 0 %}
+    <h3>Notifications</h3>
+{% endif %}
+{% for item in claimed_items %}
+    <div class="claimNotification">
+        {% if item['lost_found'] == 'Lost' %}
+            <p>{{ item['other_user'] }} found your {{ item['description'] }}</p>
+        {% else %}
+            <p>{{ item['other_user'] }} claimed the {{ item['description'] }} you found</p>
+        {% endif %}
+    </div>
+{% endfor %}
+
+<h3>Lost items</h3>
+{% for item in lost_items %}
+    {% set item=item %}
+    {% include 'show_item_profile.html' %}
+{% endfor %}
+
+<h3>Found items</h3>
+{% for item in found_items %}
+    {% set item=item %}
+    {% include 'show_item_profile.html' %}
+{% endfor %}
+
+{% endblock %}

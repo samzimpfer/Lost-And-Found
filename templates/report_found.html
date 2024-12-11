@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Report Found Item</h2>
+
+<button class="mediumButton" type="button" onclick="window.location.href='report_new_found'">Report new found item</button>
+
+<h3>Browse lost items</h3>
+<p>Make sure the item you found isn't one of these already listed lost items...</p>
+{% set action='report_found' %}
+{% include 'browse.html' %}
+
+{% endblock %}

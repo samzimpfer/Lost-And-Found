@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Insights</h2>
+
+<h3>Finders' leaderboard</h3>
+<table>
+    <tr>
+        <th>User</th>
+        <th>Items found and returned</th>
+    </tr>
+    {% for i in info %}
+    <tr>
+        <td>{{ i['username'] }}</td>
+        <td>{{ i['num_items'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>Commonly lost categories</h3>
+
+<img src="{{ url_for('static', filename='plot.png') }}" alt="">
+
+{% endblock %}

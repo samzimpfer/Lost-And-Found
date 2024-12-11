@@ -1,0 +1,44 @@
+<p class="accordion">Filter</p>
+<form class="filterForm panel" method="POST" action="{{ action }}">
+    <p>
+        <label for="catagory">Filter by category: </label>
+        <select name="category">
+            <option value="">All items</option>
+            {% for category in categories %}
+            <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+        </select>
+    </p>
+    <p>
+        <label for="keyword">Filter by keyword:</label>
+        <input type="text" name="keyword" value="" onclick="this.select()">
+    </p>
+    <p>Filter by date:</p>
+    <p>
+        <label for="start-date">From: </label>
+        <input type="date" name="start-date">
+        <label for="end-date">Until: </label>
+        <input type="date" name="end-date">
+    </p>
+    <p>
+        <button class="smallButton" type="submit">Go</button>
+    </p>
+</form>
+
+<script> /* Accoridon functionality sourced from w3schools.com */
+let accordion = document.getElementsByClassName("accordion")[0];
+accordion.addEventListener("click", function() {
+    this.classList.toggle("active");
+    let panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+    } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+});
+</script>
+
+{% for item in info %}
+    {% set item=item %}
+    {% include 'show_item_browse.html' %}
+{% endfor %}

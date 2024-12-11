@@ -1,0 +1,209 @@
+:root {
+    --color0: #f2f2f2;
+    --color1: rgb(224, 224, 224);
+    --color2: rgb(37, 79, 123);
+    --color3: rgb(33, 70, 108);
+}
+
+/* style.css */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: auto;
+    background-color: var(--color1);
+}
+
+main {
+    padding: 2% 10%;
+}
+
+.container {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+h1 {
+    background-color: var(--color2);
+    color: var(--color1);
+    margin: auto;
+    padding: 2%;
+    text-align: center;
+}
+
+button, input[type="submit"] {
+    display: block;
+    margin: auto;
+    margin-block: 4%;
+    border: 4px solid var(--color3);
+    border-radius: 5px;
+    background-color: var(--color2);
+    color: var(--color1);
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #ddd;
+    color: var(--color2);
+}
+
+.largeButton {
+    font-size: 36px;
+    width: 30%;
+    height: 4em;
+}
+
+.mediumButton {
+    font-size: 24px;
+    width: 25%;
+    height: 2.5em;
+}
+
+.smallButton {
+    font-size: 18px;
+    padding: .5% 1%;
+    border: 3px solid var(--color3);
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--color2);
+    padding: 0%;    
+}
+
+.navbar a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    padding: .5em 1em;
+    
+    text-decoration: none;
+    height: 100%;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: var(--color2);
+}
+
+.profile {
+    float: right;
+}
+
+/* Form Styling */
+form, .itemDisplay {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 0% 4%;
+    background-color: var(--color0);
+    border-radius: 5px;
+    overflow: hidden;    
+}
+
+.itemDisplay form {
+    max-width: 100%;
+}
+
+form p * {
+    background-color: auto;
+}
+
+form input[type="text"],
+form textarea {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form select {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(52, 94, 63);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Filter styling */
+.filterForm {
+    max-width: 100%;
+    display: inline-block;
+}
+
+.accordion {
+    background-color: var(--color0);background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 1em;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796";
+}
+
+.panel {
+    display: inline-block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/* Item display styling */
+.itemDisplay {
+    margin: 20px auto;
+}
+
+/* Table styling */
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin-bottom: 5em;
+}
+
+th, td {
+    border: 1px solid black;
+    width: 10em;
+    padding: .5em;
+}
+
+/* Extras */
+.error {
+    color: red;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatCenter {
+    margin: auto;
+}
+
+.floatRight {
+    float: right;
+}

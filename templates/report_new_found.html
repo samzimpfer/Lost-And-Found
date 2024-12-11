@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Report Found Item</h2>
+
+<form id="form" method="POST" action="report_new_found">
+    <p>
+        <label for="description">Description: </label>
+        <input type="text" name="description" onclick="this.select()" required>
+    </p>
+    <p>
+        <label for="category">Category: </label>
+        <select name="category" id="category-select" onchange="updateCategories()" required>
+            <option value="">--Select a category--</option>
+            {% for category in categories %}
+            <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+            <option value="other">Other</option>
+        </select>
+    </p>
+    <p id="other-category-p" style="display:none">
+        <label for="other-category">Enter category:</label>
+        <input type="text" name="other-category" onclick="this.select()">
+    </p>
+    <p>
+        <label for="date">Date found: </label>
+        <input type="date" name="date" onclick="this.select()" required>
+    </p>
+    <p>
+        <button class="smallButton floatLeft" type="button" onclick="window.location.href='find_item'">Cancel</button>
+        <button class="smallButton floatRight" type="submit">Report</button>
+    </p>
+</form>
+
+<script>
+    function updateCategories() {
+        category_value = document.forms["form"]["category-select"].value;
+        other_category_p = document.getElementById("other-category-p");
+        other_category_input = document.forms["form"]["other-category"];
+        if (category_value == "other") {
+            other_category_p.style.display = "";
+            other_category_input.required = true;
+        } else {
+            other_category_p.style.display = "none";
+            other_category_input.required = false;
+        }
+    }
+</script>
+
+{% endblock %}
