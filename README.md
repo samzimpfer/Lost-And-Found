@@ -14,3 +14,6 @@ LEGAL ACKNOWLEDGEMENTS: There are obviously lots of legal precuations that must 
 
 FUTURE PLANS: I would ultimately like to transform this website into a mobile app. I plan on redesigning the frontend using some sort of framework, potentially React. I will also store data on a platform other than SQLite in the final version of this project. This will be something I distribute to college campuses, and the first layer of secuirty will be logging in with a valid student ID.
 
+STATUS:
+Made new branch to start implementing React within
+
