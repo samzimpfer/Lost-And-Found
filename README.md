@@ -15,5 +15,5 @@ LEGAL ACKNOWLEDGEMENTS: There are obviously lots of legal precuations that must 
 FUTURE PLANS: I would ultimately like to transform this website into a mobile app. I plan on redesigning the UI with modern frameworks, likely React and Node.js. I will also store data on a platform other than SQLite in the final version of this project. This will be something I distribute to college campuses, and the first layer of secuirty will be logging in with a valid student ID.
 
 STATUS:
-Made new branch to start implementing React within
+Started implementing React and Node in a separate branch. Due to create-react-app being recently deprecated, I will ultimately want to design the app with Next.js and Express. Most online resources focus on plain React however, so I will first design the app using React and Express, and then working on migrating to Next.js.
 
