@@ -1,5 +1,7 @@
 # Lost-And-Found
 
+To run, run app.py in the 'original-flask-implementation' directory
+
 DISCLAIMER: This project is currently a work in progress. It is not ready to be deployed, and is more so a proof of concept. The following information documents the current state of the project, and there are many more precautions that must be taken before launching a lost and found app.
 
 DESCRIPTION: This program is a lost and found website intended to be used on college campuses. It stores data on users, items, and claims on lost/found items in an SQLite database which users can interact with via a website built using Flask. To use the website, you must create an account, which will save your personal information to the database. Once you've created an account, you may use the website either to find an item you've lost, or report someone else's lost item that you've found. Users may browse and filter lost items and found items. If a user believes a found item is theirs, they may claim that item. Similarly, if a user believes they’ve found an item that has been reported lost, they may  file a claim on that item. In a future version of this project, there will be a verification system for filing any sort of claim.

@@ -36,7 +36,7 @@ def generate_plot():
     plt.xticks(fontsize=8)
     plt.tight_layout()
 
-    plt.savefig(os.path.join('static', 'plot.png'))
+    plt.savefig(os.path.join('original-flask-implementation/static', 'plot.png'))
 
 @app.route("/")
 def index():
